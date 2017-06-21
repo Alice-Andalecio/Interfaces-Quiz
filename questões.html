@@ -4,18 +4,18 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 
-   <!--- basic page needs
+<!--- basic page needs
    ================================================== -->
    <meta charset="utf-8">
    <title>Questões</title>
    <meta name="description" content="">  
    <meta name="author" content="">
 
-   <!-- mobile specific metas
+<!-- mobile specific metas
    ================================================== -->
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-   <!-- CSS
+<!-- CSS
    ================================================== -->
    <link rel="stylesheet" href="css/base.css">  
    <link rel="stylesheet" href="css/main.css">
@@ -25,14 +25,14 @@
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-   <!-- script
+<!-- script
    ================================================== -->
    <script src="js/modernizr.js"></script>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
    <script src="js/materialize.js"></script>
    <script src="js/init.js"></script>
 
-   <!-- favicons
+<!-- favicons
    ================================================== -->
    <link rel="icon" type="image/png" href="favicon.png">
 
@@ -40,7 +40,7 @@
 
 <body id="top">
 
-   <!-- header 
+<!-- header 
    ================================================== -->
    <header>
 
@@ -60,12 +60,12 @@
          </nav>
 
          <a class="menu-toggle" href="#"><span>Menu</span></a>
-         
+
       </div>      
-      
+
    </header> <!-- /header -->
 
-   <!-- inicio
+<!-- inicio
    ================================================== -->
    <section id="intro">
 
@@ -90,7 +90,7 @@
 
 
 
-   <!-- Visualização das Questões inseridas no  Quiz.
+<!-- Visualização das Questões inseridas no  Quiz.
    ================================================== -->
    <section id="process">  
       <div class="row section-intro">
@@ -100,10 +100,18 @@
       </div>
 
 
+
       <div class="row">
-      <div class="col s1"></div>
-       <div class="input-field col s10">
-          <select>
+         <div class="col s1"></div>
+         <div class="col s10">
+         <input type="text" name="search" placeholder="Pesquisar"></input>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col s1"></div>
+         <div class="input-field col s10">
+           <select>
             <option value disabled selected>Selecione a Disciplina</option>
             <option value="1"><b>Projeto de Sistemas</b></option>
             <option value="2"><b>Linguagem de Programação II</b></option>
@@ -147,56 +155,60 @@
       <div class="col s1"></div>
       <div class="col s10">
          <div id="botaoResponder">
-           <button class="btn waves-effect waves-light" type="submit" name="action">Responder
-              <i class="material-icons right">send</i>
-           </button>
-        </div>
-     </div>
-  </div>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Responder
+             <i class="material-icons right">send</i>
+          </button>
+
+          <button class="btn waves-effect waves-light" type="submit" name="action">Fórum
+             <i class="material-icons right">send</i>
+          </button>
+       </div>
+    </div>
+ </div>
 
 </section>
 
-  <!-- NavBar
-  ================================================== -->
-  <footer>
-   <div class="footer-main">
-      <div class="row">  
-         <div class="col-four tab-full mob-full footer-info">            
-            <div class="footer-logo"></div>
-            <p>
-               Centro Federal de Educação Tecnológica de Minas Gerais
-               <br>
-               Av. Amazonas, 7675 - Nova Gameleira, Belo Horizonte - MG<br>
-               Telefone: +55 (31) 3319-6722
-            </p>
-         </div> <!-- /footer-info -->
+<!-- NavBar
+   ================================================== -->
+   <footer>
+      <div class="footer-main">
+         <div class="row">  
+            <div class="col-four tab-full mob-full footer-info">            
+               <div class="footer-logo"></div>
+               <p>
+                  Centro Federal de Educação Tecnológica de Minas Gerais
+                  <br>
+                  Av. Amazonas, 7675 - Nova Gameleira, Belo Horizonte - MG<br>
+                  Telefone: +55 (31) 3319-6722
+               </p>
+            </div> <!-- /footer-info -->
 
-         <div class="col-two tab-1-3 mob-1-2">
-            <h4>Instituição</h4>
-            <ul>
-               <li><a href="http://www.cefetmg.br/">CEFET-MG</a></li>
-               <li><a href="http://www.campus2.cefetmg.br/">CEFET-MG/CII</a></li">
-                  <li><a href="http://www.decom.cefetmg.br/">DECOM</a></li>
-               </ul>
-            </div> <!-- site-links --> 
-            <div class="col-two tab-1-3 mob-1-2 social-links">
-               <h4>Sigam-nos</h4>
+            <div class="col-two tab-1-3 mob-1-2">
+               <h4>Instituição</h4>
                <ul>
-                  <li><a href="https://www.facebook.com/cefetminasgerais/">Facebook CEFET-MG</a></li>
-                  <li><a href="https://www.facebook.com/cefetmg.campus2/">Facebook CEFET CII</a></li>
-                  <li><a href="https://www.instagram.com/cefetmg/">Instagram CEFET</a></li>
-               </ul>         
-            </div> <!-- /sociais-->
-            <div class="col-four tab-1-3 mob-full">
-               <h4>Professores</h4>
-               <p>Cristiano Amaral Maffort - Linguagem de Programação II.<br>
-                  Glívia Angélica Rodrigues Barbosa - Projetos de Sistemas.<br>
-                  Edson Marchetti da Silva - Banco de Dados.</p>              
-               </div> <!-- /professores -->         
-               <div id="preloader"> 
-                  <div id="loader"></div>
-               </div> 
-   <!-- Java Script
+                  <li><a href="http://www.cefetmg.br/">CEFET-MG</a></li>
+                  <li><a href="http://www.campus2.cefetmg.br/">CEFET-MG/CII</a></li">
+                     <li><a href="http://www.decom.cefetmg.br/">DECOM</a></li>
+                  </ul>
+               </div> <!-- site-links --> 
+               <div class="col-two tab-1-3 mob-1-2 social-links">
+                  <h4>Sigam-nos</h4>
+                  <ul>
+                     <li><a href="https://www.facebook.com/cefetminasgerais/">Facebook CEFET-MG</a></li>
+                     <li><a href="https://www.facebook.com/cefetmg.campus2/">Facebook CEFET CII</a></li>
+                     <li><a href="https://www.instagram.com/cefetmg/">Instagram CEFET</a></li>
+                  </ul>         
+               </div> <!-- /sociais-->
+               <div class="col-four tab-1-3 mob-full">
+                  <h4>Professores</h4>
+                  <p>Cristiano Amaral Maffort - Linguagem de Programação II.<br>
+                     Glívia Angélica Rodrigues Barbosa - Projetos de Sistemas.<br>
+                     Edson Marchetti da Silva - Banco de Dados.</p>              
+                  </div> <!-- /professores -->         
+                  <div id="preloader"> 
+                     <div id="loader"></div>
+                  </div> 
+<!-- Java Script
    ================================================== --> 
    <script src="js/jquery-1.11.3.min.js"></script>
    <script src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -204,9 +216,9 @@
    <script src="js/main.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
    <script type="text/javascript">
-    $(document).ready(function() {
-       $('select').material_select();
-    });
- </script>
+     $(document).ready(function() {
+        $('select').material_select();
+     });
+  </script>
 </body>
 </html>
