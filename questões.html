@@ -112,38 +112,52 @@
          </div>  
       </div>
 
-      <div id="enunciado" align="left" class="container">
-         <p class="questao">
-            <h3>O trecho da obra de Sófocles, que expressa o núcleo da tragédia grega, revela o(a):</h3>
-         </p>
-
-         <p>
-         <input name="group1" type="radio" id="test1" />
-            <label for="test1"><b>Condenação eterna dos homens pela prática injustificada do incesto.</b></label>
-         </p>
-         <p>
-            <input name="group1" type="radio" id="test2" />
-            <label for="test2"><b>Legalismo estatal ao punir com a prisão perpétua o crime de parricídio.</b></label>
-         </p>
-         <p>
-            <input class="with-gap" name="group1" type="radio" id="test3"  />
-            <label for="test3"><b>Busca pela explicação racional sobre os fatos até então desconhecidos.</b></label>
-         </p>
-         <p>
-            <input class="with-gap" name="group1" type="radio" id="test4"  />
-            <label for="test4"><b>Caráter antropomórfico dos deuses na medida em que imitavam os homens.</b></label>
-         </p>
-
-         <p>
-            <input class="with-gap" name="group1" type="radio" id="test5"  />
-            <label for="test5"><b>Impossibilidade de o homem fugir do destino predeterminado pelos deuses.</b> </label>
-         </p>
-
-      </div>
+      <div class="input-field col s8">
+        <select>
+         <option value="" disabled selected><h3>Escoha a Disciplina</h3></option>
+         <option value="1">PSI</option>
+         <option value="2">LPII</option>
+         <option value="3">BD</option>
+      </select>
+   </div>
 
 
-   </section>
+   <div id="enunciado" align="left" class="container">
+      <p class="questao">
+         <h3>O trecho da obra de Sófocles, que expressa o núcleo da tragédia grega, revela o(a):</h3>
+      </p>
 
+      <p>
+         <input class="with-gap" name="group1" type="radio" id="test1" />
+         <label for="test1"><b>A) Condenação eterna dos homens pela prática injustificada do incesto.</b></label>
+      </p>
+      <p>
+         <input class="with-gap" name="group1" type="radio" id="test2" />
+         <label for="test2"><b>B) Legalismo estatal ao punir com a prisão perpétua o crime de parricídio.</b></label>
+      </p>
+      <p>
+         <input class="with-gap" name="group1" type="radio" id="test3"  />
+         <label for="test3"><b>C) Busca pela explicação racional sobre os fatos até então desconhecidos.</b></label>
+      </p>
+      <p>
+         <input class="with-gap" name="group1" type="radio" id="test4"  />
+         <label for="test4"><b>D) Caráter antropomórfico dos deuses na medida em que imitavam os homens.</b></label>
+      </p>
+
+      <p>
+         <input class="with-gap" name="group1" type="radio" id="test5"  />
+         <label for="test5"><b>E) Impossibilidade de o homem fugir do destino predeterminado pelos deuses.</b> </label>
+      </p>
+
+   </div>
+
+   <div id="botaoResponder" class="container">
+    <button class="btn waves-effect waves-light" type="submit" name="action">Responder
+       <i class="material-icons right">send</i>
+    </button>
+ </div>
+
+</section>
 
   <!-- NavBar
   ================================================== -->
@@ -195,5 +209,12 @@
    <script src="js/jquery-migrate-1.2.1.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function() {
+        $('select').material_select();
+     });
+  </script>
+
 </body>
 </html>
