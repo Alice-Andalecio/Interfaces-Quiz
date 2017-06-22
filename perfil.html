@@ -32,6 +32,19 @@
    ================================================== -->
    <link rel="icon" type="image/png" href="favicon.png">
 
+   <!-- Style do header
+   ================================================== -->
+   <style type="text/css">
+      header {
+         width: 100%;
+         position: absolute;
+         left: 0;
+         top: 0px;
+         z-index: 600;
+         background: #14171c;
+      }
+   </style>
+
 </head>
 
 <body id="top">
@@ -48,10 +61,11 @@
 
          <nav id="main-nav-wrap">
             <ul class="main-navigation">
-               <li class="current"><a class="smoothscroll"  href="#intro" title="">Início</a></li> <!-- Verificar qual será a página inicial -->
-               <li><a href="cadastroQuestao.html" title="">Cadastrar Questões</a></li>
-               <li><a href="questões.html" title="">Banco de Questões</a></li>   
-               <li class="highlight with-sep"><a class="smoothscroll" href="#process" title="">Perfil</a></li>                             
+               <li><a href="questões.html" title="">Início</a></li> 
+               <li><a href="questões.html" title="">Questões</a></li>   
+               <li class="highlight with-sep"><a href="perfil.html" title="">Perfil</a></li>
+               <li class="highlight with-sep"><a title="">Sair</a></li>
+
             </ul>
          </nav>
 
@@ -59,52 +73,31 @@
          
       </div>      
       
-   </header> <!-- /header -->
+   </header>
 
-   <!-- inicio
-   ================================================== -->
-   <section id="intro">
 
-      <div class="shadow-overlay"></div>
-
-      <div class="intro-content">
-         <div class="row">
-
-            <div class="col-twelve">
-
-               <h5>Múltipla Escolha</h5>
-               <h1>Perfil</h1>
-
-               <a class="button stroke smoothscroll" href="#process" title="">Ver Perfil</a>
-            </div>  
-
-         </div>               
-      </div>        
-   </section> <!-- /intro -->
-
-   
    <!-- formulário de cadastro
    ================================================== -->
    <section id="process">  
 
+      <br>
       <div class="row">
          <div class="col s3">
-            <img src="images/avatars/avatar-3.jpg">
+            <img src="images/avatars/avatar-3.jpg" class="circle responsive-img">
          </div>
 
          <div class="col s1"></div>
 
-         <div class="col s3">
+         <div class="col s3 borda">
             <h3>Questões Respondidas:</h3>
             <h2>23</h2>
          </div> 
-
 
       </div>
 
       <div class="row">
          <div class="col s3">
-            Gabriel Victor Guimarães Xavier
+            <p>Gabriel Victor Guimarães Xavier</p>
             <h5>Gabrigol</h5>
          </div>
       </div>
