@@ -36,6 +36,19 @@
    ================================================== -->
    <link rel="icon" type="image/png" href="favicon.png">
 
+<!-- Style do header
+   ================================================== -->
+   <style type="text/css">
+      header {
+         width: 100%;
+         position: absolute;
+         left: 0;
+         top: 0px;
+         z-index: 600;
+         background: #14171c;
+      }
+   </style>
+
 </head>
 
 <body id="top">
@@ -52,8 +65,7 @@
 
          <nav id="main-nav-wrap">
             <ul class="main-navigation">
-               <li class="current"><a class="smoothscroll"  href="#intro" title="">Início</a></li>
-               <li><a class="smoothscroll"  href="#process" title="">Questões</a></li>    
+               <li><a href="index.html" title="">Início</a></li>   
                <li class="highlight with-sep"><a href="#" title="">Login</a></li>               
                <li class="highlight with-sep"><a href="#" title="">Cadastre-se</a></li>               
             </ul>
@@ -63,31 +75,7 @@
 
       </div>      
 
-   </header> <!-- /header -->
-
-<!-- inicio
-   ================================================== -->
-   <section id="intro">
-
-      <div class="shadow-overlay"></div>
-
-      <div class="intro-content">
-         <div class="row">
-
-            <div class="col-twelve">
-
-               <h5>Visualização e Repostas das que compõem nosso banco!</h5>
-               <h1>Questões</h1>
-
-               <a class="button stroke smoothscroll" href="#process" title="">Desfrute</a>
-            </div>  
-
-         </div>               
-
-      </div>  
-
-   </section> <!-- /intro -->
-
+   </header>
 
 
 <!-- Visualização das Questões inseridas no  Quiz.
@@ -95,16 +83,16 @@
    <section id="process">  
       <div class="row section-intro">
          <div class="col-twelve with-bottom-line">
+            <br>
             <h1>Questões</h1>
          </div>  
       </div>
 
-
-
       <div class="row">
          <div class="col s1"></div>
          <div class="col s10">
-         <input type="text" name="search" placeholder="Pesquisar"></input>
+            <br>
+            <input type="text" name="search" placeholder="Pesquisar"></input>
          </div>
       </div>
 
