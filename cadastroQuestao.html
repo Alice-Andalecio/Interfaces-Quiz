@@ -22,7 +22,7 @@
    <link rel="stylesheet" href="css/vendor.css">    
    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- 
+
 
    <!-- script
    ================================================== -->
@@ -72,20 +72,18 @@
 
             <div class="col-twelve">
 
-               <h5>A revolução de seus estudos começa aqui!</h5>
-               <h1>Múltipla Escolha</h1>
+               <h5>Múltipla Escolha</h5>
+               <h1>Cadastro de Questões</h1>
 
-               <a class="button stroke smoothscroll" href="#process" title="">Experimente</a>
+               <a class="button stroke smoothscroll" href="#process" title="">Cadastrar</a>
             </div>  
 
          </div>               
-
       </div>        
-
    </section> <!-- /intro -->
 
-
-   <!-- funcionamento
+   
+   <!-- formulário de cadastro
    ================================================== -->
    <section id="process">  
 
@@ -100,7 +98,8 @@
       <div class="row">
          <form id="CadastroQ" class="col-twelve">
             <div class="row">
-               <div class="col s5">
+               <div class="col s3"></div>
+               <div class="col s6">
                   <br>
                   <select class="browser-default">
                      <option value="" disabled selected>Defina a disciplina da questão</option>
@@ -111,50 +110,40 @@
                   </select>
                   <br>
                </div>
-
-               <div class="col s2"></div>
-
-               <div class=" input-field col s5">
-                  <textarea id="enunciado" class="materialize-textarea"></textarea>
-                  <label for="enunciado">Digite o enunciado da questão</label>
-               </div>
-               <br>
             </div>
 
             <div class="row">
-               <div class="input-field col s5">
+               <div class="col s3"></div>
+               <div class="input-field col s6">
                   <textarea id="dominio" class="materialize-textarea"></textarea>
-                  <label for="dominio">Defina o domínio da questão</label>
+                  <label for="dominio"><b>Defina o domínio da questão</b></label>
                </div>
                <br>
-
-               <div class="col s2"></div>
-
-               <div class="col s5"></div> <!-- Alternativas -->
-
             </div>
 
             <div class="row">
-               <div class="col s5">
+               <div class="col s3"></div>
+               <div class="col s6">
                   <p>Defina o estilo da questão</p>
                   <p>
                      <input name="estilo" type="radio" id="multiplaEscolha"/>
-                     <label for="multiplaEscolha">Múltipla Escolha</label>
+                     <label for="multiplaEscolha"><b>Múltipla Escolha</b></label>
                   </p>
                   <p>
                      <input name="estilo" type="radio" id="VouF"/>
-                     <label for="VouF">Verdadeiro ou Falso</label>
+                     <label for="VouF"><b>Verdadeiro ou Falso</b></label>
                   </p>
                   <p>
                      <input name="estilo" type="radio" id="dissertativa"/>
-                     <label for="dissertativa">Dissertativa</label>
+                     <label for="dissertativa"><b>Dissertativa</b></label>
                   </p>
                   <br>
                </div>
+            </div>
 
-               <div class="col s2"></div>
-
-               <div class="file-field input-field col s5">
+            <div class="row">
+               <div class="col s3"></div>
+               <div class="file-field input-field col s6">
                   <div class="btn">
                      <span>Adicionar Imagem</span>
                      <input type="file">
@@ -162,15 +151,10 @@
                   <div class="file-path-wrapper">
                      <input class="file-path validate" type="text">
                   </div>
+                  
                </div>
             </div>
 
-            <div class="row">
-               <div class="col s6"></div>
-               <div class="col s6">
-                  <!-- Visualização da questão-->
-               </div>
-            </div>
 
          </form>
       </div>
@@ -183,7 +167,7 @@
 
    <!-- footer
    ================================================== -->
-      <footer>
+   <footer>
 
       <div class="footer-main">
 
@@ -194,11 +178,11 @@
                <div class="footer-logo"></div>
 
                <p>
-               Centro Federal de Educação Tecnológica de Minas Gerais
-               <br>
-               Av. Amazonas, 7675 - Nova Gameleira, Belo Horizonte - MG
-               <br>
-               Telefone: +55 (31) 3319-6722
+                  Centro Federal de Educação Tecnológica de Minas Gerais
+                  <br>
+                  Av. Amazonas, 7675 - Nova Gameleira, Belo Horizonte - MG
+                  <br>
+                  Telefone: +55 (31) 3319-6722
                </p>
 
             </div> <!-- /footer-info -->
@@ -226,32 +210,32 @@
             <div class="col-four tab-1-3 mob-full">
                <h4>Professores</h4>
                <p>Cristiano Amaral Maffort - Linguagem de Programação II.
-               <br>
-               Glívia Angélica Rodrigues Barbosa - Projetos de Sistemas.
-               <br>
-               Edson Marchetti da Silva - Banco de Dados.</p>                        
-            </div> <!-- /professores --> 
+                  <br>
+                  Glívia Angélica Rodrigues Barbosa - Projetos de Sistemas.
+                  <br>
+                  Edson Marchetti da Silva - Banco de Dados.</p>                        
+               </div> <!-- /professores --> 
 
-         </div> <!-- /row -->
-      
-      </div> <!-- /footer-main --> 
+            </div> <!-- /row -->
 
-      <div class="footer-bottom">
-         <div class="row">
-            <div class="col-twelve">
-               <div class="copyright"></div>
+         </div> <!-- /footer-main --> 
 
-               <div id="go-top" style="display: block;">
-                  <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon ion-android-arrow-up"></i></a>
-               </div>         
-            </div>
-         </div>       
-      </div> <!-- /footer-bottom -->
-   </footer> -->       
-  
-   <div id="preloader"> 
-      <div id="loader"></div>
-   </div> 
+         <div class="footer-bottom">
+            <div class="row">
+               <div class="col-twelve">
+                  <div class="copyright"></div>
+
+                  <div id="go-top" style="display: block;">
+                     <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon ion-android-arrow-up"></i></a>
+                  </div>         
+               </div>
+            </div>       
+         </div> <!-- /footer-bottom -->
+      </footer> -->       
+
+      <div id="preloader"> 
+         <div id="loader"></div>
+      </div> 
 
    <!-- Java Script
    ================================================== --> 
