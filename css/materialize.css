@@ -3,6 +3,13 @@
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+.mostrar {
+  display: block;
+}
+
+.esconder {
+  display: none;
+}
 
 .borda {
   border: 1px solid #9e9e9e;
