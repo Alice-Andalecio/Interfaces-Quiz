@@ -43,6 +43,7 @@
          z-index: 600;
          background: #14171c;
       }
+
    </style>
 
 </head>
@@ -61,10 +62,10 @@
 
          <nav id="main-nav-wrap">
             <ul class="main-navigation">
-               <li class="current"><a class="smoothscroll"  href="#intro" title="">Início</a></li> <!-- Verificar qual será a página inicial -->
-               <li><a class="smoothscroll" href="#process" title="">Cadastrar Questões</a></li>
+               <li class="current"><a href="questao.html" title="">Início</a></li>
                <li><a href="#features" title="">Banco de Questões</a></li>   
-               <li class="highlight with-sep"><a href="#" title="">Perfil</a></li>                             
+               <li class="highlight with-sep"><a href="#" title="">Perfil</a></li>
+               <li class="highlight with-sep"><a href="#" title="">Sair</a></li>                             
             </ul>
          </nav>
 
@@ -80,7 +81,7 @@
 
       <div class="row section-intro">
          <div class="col-twelve with-bottom-line">
-         <br>
+            <br>
             <h1>Cadastro de Questões</h1>
          </div>         
       </div>
@@ -95,14 +96,16 @@
                   <br>
                   <select class="browser-default">
                      <option value="" disabled selected>Defina a disciplina da questão</option>
-                     <option value="1">Projeto de Sistemas</option>
-                     <option value="2">Linguagem de Programação II</option>
-                     <option value="3">Banco de Dados</option>
-                     <option value="4">Outra</option>
+                     <option value="1" id="PSI">Projeto de Sistemas</option>
+                     <option value="2" id="LPII">Linguagem de Programação II</option>
+                     <option value="3" id="BD">Banco de Dados</option>
+                     <option value="4" id="outra">Outra</option>
                   </select>
                   <br>
                </div>
             </div>
+
+            <div id="novo"></div>
 
             <div class="row">
                <div class="col s3"></div>
@@ -117,8 +120,13 @@
                <div class="col s3"></div>
                <div class="col s6">
                   <p>Defina o estilo da questão</p>
+                  <p>
                      <input class="with-gap" name="group1" type="radio" id="multiplaEscolha"/>
                      <label for="multiplaEscolha"><b>Múltipla Escolha</b></label>
+                  </p>
+                  <p>
+                     <input class="with-gap" name="group1" type="radio" id="VouF"/>
+                     <label for="VouF"><b>Verdadeiro ou Falso</b></label>
                   </p>
                   <p>
                      <input class="with-gap" name="group1" type="radio" id="dissertativa"/>
@@ -130,6 +138,15 @@
 
             <div class="row">
                <div class="col s3"></div>
+               <div class="input-field col s6">
+                  <textarea id="enunciado" class="materialize-textarea"></textarea>
+                  <label for="enunciado"><b> Digite o enunciado da questão</b></label>
+               </div>
+               <br>
+            </div>
+
+            <div class="row">
+               <div class="col s3"></div>
                <div class="file-field input-field col s6">
                   <div class="btn">
                      <span>Adicionar Imagem</span>
@@ -137,16 +154,80 @@
                   </div>
                   <div class="file-path-wrapper">
                      <input class="file-path validate" type="text">
-                  </div>
-                  
+                  </div>  
                </div>
             </div>
 
+            <div id="multiplaEscolha_inserir" class="esconder">
+               <div class="row">
+                  <div class="col s4"></div>
+                  <div class="input-field col s5">
+                     <textarea id="altA" class="materialize-textarea"></textarea>
+                     <label for="altA"><b>Alternativa A</b></label>
+                  </div>
+                  <br>
+               </div>
 
-         </form>
-      </div>
+               <div class="row">
+                  <div class="col s4"></div>
+                  <div class="input-field col s5">
+                     <textarea id="altB" class="materialize-textarea"></textarea>
+                     <label for="altB"><b>Alternativa B</b></label>
+                  </div>
+                  <br>
+               </div>
 
-   </section> <!-- /process-->    
+               <div class="row">
+                  <div class="col s4"></div>
+                  <div class="input-field col s5">
+                     <textarea id="altC" class="materialize-textarea"></textarea>
+                     <label for="altC"><b>Alternativa C</b></label>
+                  </div>
+                  <br>
+               </div>
+
+               <div class="row">
+                  <div class="col s4"></div>
+                  <div class="input-field col s5">
+                     <textarea id="altD" class="materialize-textarea"></textarea>
+                     <label for="altD"><b>Alternativa D</b></label>
+                  </div>
+                  <br>
+               </div>
+
+               <div class="row">
+                  <div class="col s4"></div>
+                  <div class="input-field col s5">
+                     <textarea id="altE" class="materialize-textarea"></textarea>
+                     <label for="altE"><b>Alternativa E</b></label>
+                  </div>
+                  <br>
+                  </div>
+            </div>
+
+            <div class="row">
+               <div class="col s3"></div>
+               <div class="input-field col s6">
+                  <textarea id="resposta" class="materialize-textarea"></textarea>
+                  <label for="resposa"><b>Resposta</b></label>
+               </div>
+               <br>
+            </div>
+
+            <div class="row">
+               <div class="col s3"></div>
+               <div class="input-field col s6">
+                  <button class="btn waves-effect waves-light" type="submit" name="enviar">Enviar
+                    <i class="material-icons right">send</i>
+                 </button>
+              </div>
+           </div>
+
+
+        </form>
+     </div>
+
+  </section> <!-- /process-->    
 
 
    <!-- footer
@@ -228,5 +309,6 @@
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
    <script src="js/materialize.js"></script>
+   <script src="js/questaoCad.js"></script>
 </body>
 </html>
