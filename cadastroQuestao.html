@@ -32,6 +32,19 @@
    ================================================== -->
    <link rel="icon" type="image/png" href="favicon.png">
 
+   <!-- Style do header
+   ================================================== -->
+   <style type="text/css">
+      header {
+         width: 100%;
+         position: absolute;
+         left: 0;
+         top: 0px;
+         z-index: 600;
+         background: #14171c;
+      }
+   </style>
+
 </head>
 
 <body id="top">
@@ -61,34 +74,13 @@
       
    </header> <!-- /header -->
 
-   <!-- inicio
-   ================================================== -->
-   <section id="intro">
-
-      <div class="shadow-overlay"></div>
-
-      <div class="intro-content">
-         <div class="row">
-
-            <div class="col-twelve">
-
-               <h5>Múltipla Escolha</h5>
-               <h1>Cadastro de Questões</h1>
-
-               <a class="button stroke smoothscroll" href="#process" title="">Cadastrar</a>
-            </div>  
-
-         </div>               
-      </div>        
-   </section> <!-- /intro -->
-
-   
    <!-- formulário de cadastro
    ================================================== -->
    <section id="process">  
 
       <div class="row section-intro">
          <div class="col-twelve with-bottom-line">
+         <br>
             <h1>Cadastro de Questões</h1>
          </div>         
       </div>
@@ -125,16 +117,11 @@
                <div class="col s3"></div>
                <div class="col s6">
                   <p>Defina o estilo da questão</p>
-                  <p>
-                     <input name="estilo" type="radio" id="multiplaEscolha"/>
+                     <input class="with-gap" name="group1" type="radio" id="multiplaEscolha"/>
                      <label for="multiplaEscolha"><b>Múltipla Escolha</b></label>
                   </p>
                   <p>
-                     <input name="estilo" type="radio" id="VouF"/>
-                     <label for="VouF"><b>Verdadeiro ou Falso</b></label>
-                  </p>
-                  <p>
-                     <input name="estilo" type="radio" id="dissertativa"/>
+                     <input class="with-gap" name="group1" type="radio" id="dissertativa"/>
                      <label for="dissertativa"><b>Dissertativa</b></label>
                   </p>
                   <br>
@@ -158,9 +145,6 @@
 
          </form>
       </div>
-      
-
-
 
    </section> <!-- /process-->    
 
