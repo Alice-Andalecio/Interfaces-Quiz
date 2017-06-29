@@ -146,13 +146,14 @@
       <i class="material-icons right">send</i>
     </button>
 
-    <button class="btn waves-effect waves-light" type="submit" name="action">Fórum
+    <button class="btn waves-effect waves-light" type="submit" name="action" onclick="escondeForum('forum')">Fórum
       <i class="material-icons right">comment</i>
     </button>
   </div>
 </div>
 </div>
 
+<div id="forum" style="display: none">
 <div class="row">
   <div class="col s1"></div>
   <div class="col s10">
@@ -208,6 +209,7 @@
     </div>
   </div>
 </div>
+</div>
 
 </section>
 
@@ -257,6 +259,7 @@
  <script src="js/jquery-migrate-1.2.1.min.js"></script>
  <script src="js/plugins.js"></script>
  <script src="js/main.js"></script>
+ <script src="js/questao.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
  <script type="text/javascript">
   $(document).ready(function() {
