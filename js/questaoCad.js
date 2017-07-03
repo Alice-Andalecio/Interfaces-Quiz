@@ -1,49 +1,153 @@
 window.onload = function(){
-	document.querySelector('#multiplaEscolha').addEventListener('click', function(e){ ExibirCamposEspecificos(e.target.id) });
-	document.querySelector('#VouF').addEventListener('click', function(e){ ExibirCamposEspecificos(e.target.id) });
-	document.querySelector('#dissertativa').addEventListener('click', function(e){ ExibirCamposEspecificos(e.target.id) });
-	document.querySelector('#outra').addEventListener('click', function(){ CadastrarNovoDominio() });
+	document.querySelector('#disciplina').addEventListener('click', function(e){ ExibirOutra(e.target.id) });
+	document.querySelector('#estilo-inserir').addEventListener('click', ExibirCamposEspecificos);
+	document.querySelector('#inserirAlternativa-inserir').addEventListener('click', Inserir);
+	document.querySelector('#excluirAlternativa-inserir').addEventListener('click', ExcluirAlternativas);
+	document.querySelector('#limparAlternativa-inserir').addEventListener('click', LimparAlternativas);
+	document.querySelector('#estilo-inserir').addEventListener('mouseout', Alternativa);
 }
 
-function ExibirCamposEspecificos(idRadio){
-	let multiplaEscolha = document.querySelector('#multiplaEscolha_inserir'),
-	VouF = document.querySelector('#VouF_inserir'),
-	dissertativa = document.querySelector('#dissertativa_inserir');
-
-	switch(idRadio){
-		case 'multiplaEscolha':
-		multiplaEscolha_inserir.className = 'mostrar';
-		break;
+function ExibirOutra(){
+	if(document.querySelector('#disciplina').value==4){
+		document.querySelector('#outra_disciplina').className = 'mostrar';
 	}
-
 }
 
-function CadastrarNovoDominio() {
-	let div = document.createElement('div'), 
-	div2 = document.createElement('div'),
-	textArea = document.createElement('textArea'),
-	label = document.createElement('label');
+function ExibirCamposEspecificos(){
+	let txt_questao = document.querySelector('#txt_questao');
+	txt_questao.className = 'mostrar';
+}
 
-	div.classList.add('row');
-	div2.classList.add('col');
-	div2.classList.add('s12');
+let contadorAlternativas = 0;
 
-	div.appendChild(div2);
+function Inserir(){
+	if(contadorAlternativas<=4){
+		let div = document.createElement('div'),
+		div2 = document.createElement('div'),  
+		div3 = document.createElement('div'),
+		textArea = document.createElement('textArea'),
+		p = document.createElement('p');
 
-	div = document.createElement('div');
-	textArea = document.createElement('textarea');
+		
+		div.classList.add('row');
+		
+		div2.classList.add('col');
+		div2.classList.add('s3');
+		
+		div3.classList.add('col');
+		div3.classList.add('s6');
 
-	div.classList.add('row');
-	textArea.classList.add('materialize-textarea');
+		textArea.classList.add('materialize-textarea');
+		textArea.setAttribute('id','alt' + contadorAlternativas);
+		textArea.setAttribute('name','alternativa' + contadorAlternativas);
 
-	textArea.setAttribute('id','novoDominio');
-	textArea.setAttribute('name','dominio');
+		p.innerHTML = "Alternativa: " + (contadorAlternativas + 1);
+
+		div3.appendChild(p);				
+		div3.appendChild(textArea);
+		div.appendChild(div2);
+		div.appendChild(div3);
+		
+		document.querySelector('#alternativas-inserir').appendChild(div);
+
+		let cBoxDiv = document.createElement('div')
+		let cBox = document.createElement('input');
+		let cBoxLabel = document.createElement('label');
+		
+		cBoxDiv.appendChild(cBox);
+		cBoxDiv.appendChild(cBoxLabel);
+		div.appendChild(cBoxDiv);
+		
+		cBox.setAttribute('id','cBox' + contadorAlternativas);
+		cBox.setAttribute('name','cBox' + contadorAlternativas);
+		cBox.setAttribute('type', 'checkbox');
+		cBox.setAttribute('class', 'filled-in');
+		cBox.classList.add('checkboxes');
+
+		cBoxLabel.innerHTML = "Verdadeiro";
+		cBoxLabel.setAttribute('for', 'cBox' + contadorAlternativas);
+
+		let bRadioDiv = document.createElement('div')
+		let bRadio = document.createElement('input');
+		let bRadioLabel = document.createElement('label');
+		
+		bRadioDiv.appendChild(bRadio);
+		bRadioDiv.appendChild(bRadioLabel);
+		div.appendChild(bRadioDiv);
+		
+		bRadio.setAttribute('id','bRadio' + contadorAlternativas);
+		bRadio.setAttribute('name','bRadio');
+		bRadio.setAttribute('type', 'radio');
+		bRadio.classList.add('botoesRadio');
+		
+		if(document.querySelector('#estilo-inserir').value==0){
+			document.querySelector('#adicionar_excluir-inserir').className = 'mostrar';
+			document.querySelector('#alternativas-inserir').className = 'mostrar';
+			bRadioDiv.classList.add('botoesRadioIns');
+			bRadioDiv.classList.add('mostrar');
+			cBoxDiv.classList.add('esconder');
+		}
+		else if(document.querySelector('#estilo-inserir').value==1){
+			document.querySelector('#adicionar_excluir-inserir').className = 'mostrar';
+			document.querySelector('#alternativas-inserir').className = 'mostrar';
+			cBoxDiv.classList.add('checkboxesIns');
+			cBoxDiv.classList.add('mostrar');
+			bRadioDiv.classList.add('esconder');
+
+		}
+
+		bRadioLabel.innerHTML = "Correto";
+		bRadioLabel.setAttribute('for', 'bRadio' + contadorAlternativas);
+		
+		div.appendChild(document.createElement('br'));
+		div.appendChild(document.createElement('br'));
+	}
 	
-	label.innerHTML = "Digite o novo dominio");
-label.setAttribute('for', 'novoDominio')
+	contadorAlternativas++;
+}
 
-div.appendChild(label);				
-div.appendChild(textArea);
-div2.appendChild(div);
-document.querySelector('#novo').appendChild(div2);
+function Alternativa(){
+	let checkboxes = document.querySelectorAll('.checkboxesIns'),
+	botoesRadio = document.querySelectorAll('.botoesRadioIns');
+	
+	if(document.querySelector('#estilo-inserir').value=="" || document.querySelector('#estilo-inserir').value==2){
+		document.querySelector('#adicionar_excluir-inserir').className = 'esconder';
+		document.querySelector('#alternativas-inserir').className = 'esconder';
+	}
+	else if(document.querySelector('#estilo-inserir').value==0){
+		document.querySelector('#adicionar_excluir-inserir').className = 'mostrar';
+		document.querySelector('#alternativas-inserir').className = 'mostrar';
+		document.querySelector('#resposta').className = 'esconder';
+		
+		for(let bradio of botoesRadio){
+			bradio.classList.remove('esconder'),
+			bradio.classList.add('mostrar');
+		}
+	}
+	else if(document.querySelector('#estilo-inserir').value==1){
+		document.querySelector('#adicionar_excluir-inserir').className = 'mostrar';
+		document.querySelector('#alternativas-inserir').className = 'mostrar';
+		document.querySelector('#resposta').className = 'esconder';
+
+		for(let cbox of checkboxes){
+			cbox.classList.remove('mostrar'),
+			cbox.classList.add('esconder');
+		}
+	}
+}
+
+function LimparAlternativas(){
+	let div = document.querySelector('#alternativas-inserir');
+	while(div.firstChild){
+		div.removeChild(div.firstChild);
+	}
+	contadorAlternativas=0;
+}
+
+function ExcluirAlternativas(){
+	let div = document.querySelector('#alternativas-inserir');
+	if(div.firstChild){
+		div.removeChild(div.lastChild);
+	}
+	contadorAlternativas--;
 }
