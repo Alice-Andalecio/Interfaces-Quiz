@@ -43,7 +43,6 @@
          z-index: 600;
          background: #14171c;
       }
-
    </style>
 
 </head>
@@ -62,10 +61,10 @@
 
          <nav id="main-nav-wrap">
             <ul class="main-navigation">
-               <li class="current"><a href="questao.html" title="">Início</a></li>
-               <li><a href="#features" title="">Banco de Questões</a></li>   
-               <li class="highlight with-sep"><a href="#" title="">Perfil</a></li>
-               <li class="highlight with-sep"><a href="#" title="">Sair</a></li>                             
+               <li><a href="questao.html" title="">Início</a></li>
+               <li><a href="questao.html" title="">Questões</a></li>   
+               <li class="highlight with-sep"><a href="perfil.html" title="">Perfil</a></li>
+               <li class="highlight with-sep"><a href="index.html" title="">Sair</a></li>                             
             </ul>
          </nav>
 
@@ -73,10 +72,11 @@
          
       </div>      
       
-   </header> <!-- /header -->
+   </header>
 
    <!-- formulário de cadastro
    ================================================== -->
+
    <section id="process">  
 
       <div class="row section-intro">
@@ -94,7 +94,7 @@
                <div class="col s3"></div>
                <div class="col s6">
                   <br>
-                  <select class="browser-default">
+                  <select class="browser-default" id="disciplina">
                      <option value="" disabled selected>Defina a disciplina da questão</option>
                      <option value="1" id="PSI">Projeto de Sistemas</option>
                      <option value="2" id="LPII">Linguagem de Programação II</option>
@@ -105,7 +105,16 @@
                </div>
             </div>
 
-            <div id="novo"></div>
+            <div class="esconder" id="outra_disciplina">
+               <div class="row">
+                  <div class="col s3"></div>
+                  <div class="input-field col s6">
+                     <textarea id="txt_outra" class="materialize-textarea"></textarea>
+                     <label for="txt_outra"><b>Digite a disciplina da questão (outra)</b></label>
+                  </div>
+                  <br>
+               </div>
+            </div>
 
             <div class="row">
                <div class="col s3"></div>
@@ -119,18 +128,23 @@
             <div class="row">
                <div class="col s3"></div>
                <div class="col s6">
-                  <p>Defina o estilo da questão</p>
+                  <br>
+                  <p>Defina o nível de dificuldade da questão</p>
                   <p>
-                     <input class="with-gap" name="group1" type="radio" id="multiplaEscolha"/>
-                     <label for="multiplaEscolha"><b>Múltipla Escolha</b></label>
+                     <input class="with-gap" name="nivel" type="radio" id="facil"/>
+                     <label for="facil"><b>Fácil</b></label>
                   </p>
                   <p>
-                     <input class="with-gap" name="group1" type="radio" id="VouF"/>
-                     <label for="VouF"><b>Verdadeiro ou Falso</b></label>
+                     <input class="with-gap" name="nivel" type="radio" id="moderado"/>
+                     <label for="moderado"><b>Moderado</b></label>
                   </p>
                   <p>
-                     <input class="with-gap" name="group1" type="radio" id="dissertativa"/>
-                     <label for="dissertativa"><b>Dissertativa</b></label>
+                     <input class="with-gap" name="nivel" type="radio" id="dificil"/>
+                     <label for="dificil"><b>Difícil</b></label>
+                  </p>
+                  <p>
+                     <input class="with-gap" name="nivel" type="radio" id="desafio"/>
+                     <label for="desafio"><b>Desafio</b></label>
                   </p>
                   <br>
                </div>
@@ -138,100 +152,93 @@
 
             <div class="row">
                <div class="col s3"></div>
-               <div class="input-field col s6">
-                  <textarea id="enunciado" class="materialize-textarea"></textarea>
-                  <label for="enunciado"><b> Digite o enunciado da questão</b></label>
+               <div class="col s6">
+                  <p>  
+                     <select class="browser-default" id="estilo-inserir" name="estilo-inserir">
+                        <option value="" disabled selected>Defina o estilo da questão</option>
+                        <option value="0">Múltipla Escolha</option>
+                        <option value="1">Verdadeiro ou Falso</option>
+                        <option value="2">Dissertativa</option>
+                     </select>
+                  </p>
+                  <br>
                </div>
-               <br>
+            </div>
+
+            <div id="txt_questao" class="esconder">
+
+               <div class="row">
+                  <div class="col s3"></div>
+                  <div class="input-field col s6">
+                     <textarea id="enunciado" class="materialize-textarea"></textarea>
+                     <label for="enunciado"><b> Digite o enunciado da questão</b></label>
+                  </div>
+                  <br>
+               </div>
+
+               <div class="row">
+                  <div class="col s3"></div>
+                  <div class="file-field input-field col s6">
+                     <div class="btn">
+                        <span><i class="material-icons left">attach_file</i>Imagem</span>
+                        <input type="file">
+                     </div>
+                     <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                     </div>  
+                  </div>
+               </div>
+
+               <!-- Espaço onde as alternativas serão inseridas -->
+
+               <div class="esconder" id="alternativas-inserir" name="alternativas-inserir"></div>   
+
+               <!-- Botões específicos para questões de Múltipla Escolha ou VF -->
+
+               <div class="row esconder" id="adicionar_excluir-inserir">
+                  <div class="col s3"></div>
+                  <div class="col s6">
+                     <a class="btn-floating btn waves-effect waves-light" id="inserirAlternativa-inserir">
+                        <i class="material-icons">add</i>
+                     </a>
+                     <a class="btn-floating btn waves-effect waves-light" id="excluirAlternativa-inserir">
+                        <i class="material-icons">delete</i>
+                     </a>
+                     <a class="btn-floating btn waves-effect waves-light" id="limparAlternativa-inserir">
+                        <i class="material-icons">delete_forever</i>
+                     </a>
+                  </div>
+               </div>
+
+               <div class="mostrar" id="resposta">
+                  <div class="row">
+                     <br>
+                     <div class="col s3"></div>
+                     <div class="input-field col s6">
+                        <textarea id="gabarito-inserir" name="gabarito-inserir" class="materialize-textarea"></textarea>
+                        <label for="gabarito-inserir"><b>Resposta</b></label>
+                     </div>
+                  </div>
+               </div>
+
             </div>
 
             <div class="row">
-               <div class="col s3"></div>
-               <div class="file-field input-field col s6">
-                  <div class="btn">
-                     <span>Adicionar Imagem</span>
-                     <input type="file">
-                  </div>
-                  <div class="file-path-wrapper">
-                     <input class="file-path validate" type="text">
-                  </div>  
+               <div class="col s8"></div>
+               <div class="input-field col s3">
+                  <button class="btn waves-effect waves-light" type="submit" name="enviar">Enviar</button>
                </div>
             </div>
 
-            <div id="multiplaEscolha_inserir" class="esconder">
-               <div class="row">
-                  <div class="col s4"></div>
-                  <div class="input-field col s5">
-                     <textarea id="altA" class="materialize-textarea"></textarea>
-                     <label for="altA"><b>Alternativa A</b></label>
-                  </div>
-                  <br>
-               </div>
+         </form>
+      </div>
 
-               <div class="row">
-                  <div class="col s4"></div>
-                  <div class="input-field col s5">
-                     <textarea id="altB" class="materialize-textarea"></textarea>
-                     <label for="altB"><b>Alternativa B</b></label>
-                  </div>
-                  <br>
-               </div>
-
-               <div class="row">
-                  <div class="col s4"></div>
-                  <div class="input-field col s5">
-                     <textarea id="altC" class="materialize-textarea"></textarea>
-                     <label for="altC"><b>Alternativa C</b></label>
-                  </div>
-                  <br>
-               </div>
-
-               <div class="row">
-                  <div class="col s4"></div>
-                  <div class="input-field col s5">
-                     <textarea id="altD" class="materialize-textarea"></textarea>
-                     <label for="altD"><b>Alternativa D</b></label>
-                  </div>
-                  <br>
-               </div>
-
-               <div class="row">
-                  <div class="col s4"></div>
-                  <div class="input-field col s5">
-                     <textarea id="altE" class="materialize-textarea"></textarea>
-                     <label for="altE"><b>Alternativa E</b></label>
-                  </div>
-                  <br>
-                  </div>
-            </div>
-
-            <div class="row">
-               <div class="col s3"></div>
-               <div class="input-field col s6">
-                  <textarea id="resposta" class="materialize-textarea"></textarea>
-                  <label for="resposa"><b>Resposta</b></label>
-               </div>
-               <br>
-            </div>
-
-            <div class="row">
-               <div class="col s3"></div>
-               <div class="input-field col s6">
-                  <button class="btn waves-effect waves-light" type="submit" name="enviar">Enviar
-                    <i class="material-icons right">send</i>
-                 </button>
-              </div>
-           </div>
-
-
-        </form>
-     </div>
-
-  </section> <!-- /process-->    
+   </section>   
 
 
    <!-- footer
    ================================================== -->
+
    <footer>
 
       <div class="footer-main">
