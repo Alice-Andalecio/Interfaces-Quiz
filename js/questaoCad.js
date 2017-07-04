@@ -1,5 +1,6 @@
 window.onload = function(){
 	document.querySelector('#disciplina').addEventListener('click', function(e){ ExibirOutra(e.target.id) });
+	document.querySelector('#salvar_outra').addEventListener('click', function(e){ SalvarOutra(e.target.id) });
 	document.querySelector('#estilo-inserir').addEventListener('click', ExibirCamposEspecificos);
 	document.querySelector('#inserirAlternativa-inserir').addEventListener('click', Inserir);
 	document.querySelector('#excluirAlternativa-inserir').addEventListener('click', ExcluirAlternativas);
@@ -7,8 +8,24 @@ window.onload = function(){
 	document.querySelector('#estilo-inserir').addEventListener('mouseout', Alternativa);
 }
 
+let valor = 4;
+
+function SalvarOutra(){
+	let option = document.createElement('option'),
+		txt_option = document.querySelector('#txt_outra').value;
+	
+	option.setAttribute('value', valor);
+	option.setAttribute('id','disciplina' + valor)
+	option.innerHTML = txt_option;
+
+	document.querySelector('#outra').setAttribute('value', valor + 1);
+	document.querySelector('#disciplina').appendChild(option);
+
+	valor++;
+}
+
 function ExibirOutra(){
-	if(document.querySelector('#disciplina').value==4){
+	if(document.querySelector('#disciplina').value = valor){
 		document.querySelector('#outra_disciplina').className = 'mostrar';
 	}
 }
