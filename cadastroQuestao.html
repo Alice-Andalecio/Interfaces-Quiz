@@ -96,10 +96,10 @@
                   <br>
                   <select class="browser-default" id="disciplina">
                      <option value="" disabled selected>Defina a disciplina da questão</option>
-                     <option value="1" id="PSI">Projeto de Sistemas</option>
-                     <option value="2" id="LPII">Linguagem de Programação II</option>
-                     <option value="3" id="BD">Banco de Dados</option>
-                     <option value="4" id="outra">Outra</option>
+                     <option value="1" id="outra">Outra</option>
+                     <option value="2" id="PSI">Projeto de Sistemas</option>
+                     <option value="3" id="LPII">Linguagem de Programação II</option>
+                     <option value="4" id="BD">Banco de Dados</option>
                   </select>
                   <br>
                </div>
@@ -108,13 +108,18 @@
             <div class="esconder" id="outra_disciplina">
                <div class="row">
                   <div class="col s3"></div>
-                  <div class="input-field col s6">
+                  <div class="input-field col s5">
                      <textarea id="txt_outra" class="materialize-textarea"></textarea>
                      <label for="txt_outra"><b>Digite a disciplina da questão (outra)</b></label>
+                  </div>
+                  <div class="col s1">
+                     <a class="waves-effect waves-light btn" id="salvar_outra">Salvar</a> 
                   </div>
                   <br>
                </div>
             </div>
+
+
 
             <div class="row">
                <div class="col s3"></div>
