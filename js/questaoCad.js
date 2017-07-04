@@ -11,8 +11,9 @@ window.onload = function(){
 let valor = 4;
 
 function SalvarOutra(){
+	
 	let option = document.createElement('option'),
-		txt_option = document.querySelector('#txt_outra').value;
+	txt_option = document.querySelector('#txt_outra').value;
 	
 	option.setAttribute('value', valor);
 	option.setAttribute('id','disciplina' + valor)
@@ -22,11 +23,14 @@ function SalvarOutra(){
 	document.querySelector('#disciplina').appendChild(option);
 
 	valor++;
+	
 }
 
 function ExibirOutra(){
-	if(document.querySelector('#disciplina').value = valor){
+	if(document.querySelector('#disciplina').value == 1){
 		document.querySelector('#outra_disciplina').className = 'mostrar';
+	}else{
+		document.querySelector('#outra_disciplina').className = 'esconder';
 	}
 }
 
