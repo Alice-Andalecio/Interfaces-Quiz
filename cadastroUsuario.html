@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
    <meta charset="utf-8">
-   <title>Login</title>
+   <title>Cadastro</title>
    <meta name="description" content="">  
    <meta name="author" content="">
 
@@ -39,7 +39,7 @@
          <nav id="main-nav-wrap">
             <ul class="main-navigation">
                <li><a href="index.html" title="">Início</a></li>
-               <li><a href="cadastro.html" title="">Cadastre-se</a></li>
+               <li><a href="login.html" title="">Login</a></li>
                <li class="highlight with-sep"><a href="index.html" title="">Sair</a></li>                             
             </ul>
          </nav>
@@ -47,33 +47,49 @@
       </div>        
    </header>
 
-   <!-- Formulário para realizar login no sistema -->
+   <!-- Formulário para cadastro de usuários -->
    <section id="process">  
       <div class="row">
          <center>
-            <div class="col s12"> 
-               <br><br>        
-               <h5><b>Login</b></h5>
-               <br>
-               <div class="row">
-                  <div class="col s3"></div>
-                  <div class="input-field col s6 center-block">
-                     <input id="email" type="email" class="validate">
-                     <label for="email"><b>Email</b></label>
-                  </div>
+            <div class="col s12">
+            <br>         
+            <h5><b>Cadastre-se</b></h5>
+            <br>
+
+            <div class="row">
+               <div class="col s3"></div>
+               <div class="input-field col s6">
+                  <input id="priNome" type="text" class="validate">
+                  <label for="priNome"><b>Nome</b></label>
                </div>
-               <div class="row">
-                  <div class="col s3"></div>
-                  <div class="input-field col s6 center-block">
-                     <input id="senha" type="password" class="validate">
-                     <label for="senha"><b>Senha</b></label>
-                  </div>
+            </div>
+
+            <div class="row">
+               <div class="col s3"></div>
+               <div class="input-field col s6">
+                  <input id="email" type="email" class="validate">
+                  <label for="email"><b>Email</b></label>
                </div>
-               <br>
-               <h6><a href="esqueceuSenha.html">Esqueceu a senha? Clique aqui!</a></h6>
-               <br>
-               <a class="waves-effect waves-light btn">Entrar</a>
-        </center>
+            </div>
+
+            <div class="row">
+               <div class="col s3"></div>
+               <div class="input-field col s6">
+                  <input id="senha" type="password" class="validate">
+                  <label for="senha"><b>Senha</b></label>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col s3"></div>
+               <div class="input-field col s6">
+                  <input id="confSenha" type="password" class="validate">
+                  <label for="confSenha"><b>Confirmar Senha</b></label>
+               </div>
+            </div>
+
+            <a id="criarConta" class="waves-effect waves-light btn">Criar Conta</a>
+         </center>
       </div>
    </section>   
 

@@ -1,2 +1,1 @@
-# Interfaces-Quiz
-Interfaces definitivas
+# Interfaces-GERAL

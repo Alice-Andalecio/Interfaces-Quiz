@@ -1171,7 +1171,6 @@ a.menu-toggle {
 }
 .intro-content {
 	display: table-cell;
-	vertical-align: middle;
 	text-align: center;
 	-webkit-transform: translateY(-1.2rem);
 	-ms-transform: translateY(-1.2rem);
